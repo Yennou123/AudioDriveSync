@@ -90,14 +90,16 @@ def start_watcher():
         observer = Observer()
         observer.schedule(event_handler, path=path, recursive=False)
 
-        # 🔧 Démarrage stable dans un thread séparé
-        threading.Thread(target=observer.start, daemon=True).start()
-        time.sleep(0.5)  # Laisser le temps au thread d’initier
-
+        # ✅ Démarrage direct (sans thread)
+        observer.start()
         watcher_logger.info(f"Observer démarré, surveillance active pour : {path}")
 
+        # Attendre que le thread de watchdog soit stable
+        time.sleep(1)
+
+        # Boucle de surveillance
         while not stop_flag.is_set():
-            if observer is None or not observer.is_alive():
+            if not observer.is_alive():
                 watcher_logger.error("Observer s'est arrêté de manière inattendue")
                 break
             time.sleep(1)
