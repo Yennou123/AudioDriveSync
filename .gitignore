@@ -1,0 +1,58 @@
+```
+# === Environnement virtuel ===
+venv/
+.env/
+.env.bak/
+
+# === Fichiers temporaires et caches ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.bak
+*.swp
+
+# === Configuration locale ===
+config.json
+*.ini
+*.cfg
+*.env
+
+# === Logs et sorties ===
+*.log
+logs/
+*.out
+*.err
+
+# === VS Code ===
+.vscode/
+.history/
+
+# === Windows ===
+Thumbs.db
+Desktop.ini
+
+# === Dossiers du projet AudioDriveSync ===
+AudioDriveSync/
+AppData/
+*.db
+*.json
+uploaded_files.json
+
+# === Autres fichiers potentiellement sensibles ===
+credentials.json
+token.pickle
+
+# === Compilations ou distributions ===
+build/
+dist/
+*.spec
+
+# === Archives ===
+*.zip
+*.tar
+*.gz
+*.7z
+```
